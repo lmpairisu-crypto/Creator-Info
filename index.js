@@ -145,59 +145,51 @@ client.once("ready", async () => {
     );
 
     // ===============================
-    // 1. SEND EMBED
-    // ===============================
+// 1. SEND EMBED
+// ===============================
 
-    await channel.send({
-      content:
-        `<@&${ARTIST_ROLE_ID}> <@&${CONTENT_CREATOR_ROLE_ID}>`,
+await channel.send({
+  content:
+    `<@&${ARTIST_ROLE_ID}> <@&${CONTENT_CREATOR_ROLE_ID}>`,
 
-      embeds: [embed],
+  embeds: [embed],
 
-      allowedMentions: {
-        roles: [
-          ARTIST_ROLE_ID,
-          CONTENT_CREATOR_ROLE_ID
-        ]
-      }
-    });
-
-    console.log("✅ Creator & Artist embed sent!");
-
-    // ===============================
-    // 2. SEND VIDEO URL
-    // ===============================
-
-    if (BOTTOM_MEDIA_URL) {
-      await channel.send({
-        content: BOTTOM_MEDIA_URL,
-        allowedMentions: {
-          parse: []
-        }
-      });
-
-      console.log("🎥 Video URL sent for Discord preview!");
-    } else {
-      console.log("⚠️ BOTTOM_MEDIA_URL is missing.");
-    }
-
-    // ===============================
-    // 3. SEND BUTTON UNDER VIDEO
-    // ===============================
-
-    await channel.send({
-      components: [row]
-    });
-
-    console.log("🎨 Join Fan Art Studio button sent!");
-
-  } catch (error) {
-    console.error(
-      "❌ Error while sending embed/video/button:",
-      error
-    );
+  allowedMentions: {
+    roles: [
+      ARTIST_ROLE_ID,
+      CONTENT_CREATOR_ROLE_ID
+    ]
   }
 });
+
+console.log("✅ Creator & Artist embed sent!");
+
+// ===============================
+// 2. SEND VIDEO
+// ===============================
+
+if (BOTTOM_MEDIA_URL) {
+  await channel.send({
+    content: BOTTOM_MEDIA_URL,
+    allowedMentions: {
+      parse: []
+    }
+  });
+
+  console.log("🎥 Video sent!");
+} else {
+  console.log("⚠️ BOTTOM_MEDIA_URL is missing.");
+}
+
+// ===============================
+// 3. SEND BUTTON UNDER VIDEO
+// ===============================
+
+await channel.send({
+  components: [row]
+});
+
+console.log("🎨 Join Fan Art Studio button sent!");
 
 // ===============================
 // DISCORD ERROR HANDLING
