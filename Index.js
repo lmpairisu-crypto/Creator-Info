@@ -62,7 +62,7 @@ client.once("ready", async () => {
   // ===============================
 
   const embed = new EmbedBuilder()
-    .setColor("#5865F2")
+    .setColor("#D4AF37")
     .setTitle("🏆 HONOR OF KINGS CREATOR & ARTIST")
     .setDescription(
       `## 🎥 Honor of Kings Content Creator\n\n` +
@@ -93,8 +93,7 @@ client.once("ready", async () => {
     )
     .setFooter({
       text: "Honor of Kings • Lampoon Creator Program"
-    })
-    .setTimestamp();
+    }
 
   // ===============================
   // LARGE MEDIA AT BOTTOM
