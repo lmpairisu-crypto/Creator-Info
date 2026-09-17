@@ -26,9 +26,8 @@ const CONTENT_CREATOR_ROLE_ID = "1537899709686087781";
 const FAN_ART_INVITE = "https://discord.gg/CfvXjMBH";
 
 // Direct Discord VIDEO URL
-// No filename is required.
-const VIDEO_URL = "YOUR_DISCORD_VIDEO_URL";
-
+const VIDEO_URL =
+  "https://cdn.discordapp.com/attachments/1546827751758233610/1546836263884038254/video_260908_183628.mp4?ex=6aac6fc8&is=6aab1e48&hm=804557249cc4353e264e128a076ca41e0394926f4dac529f2c978bceae5b872a&";
 // ===============================
 // HEALTH SERVER FOR RENDER
 // ===============================
@@ -130,7 +129,7 @@ client.once("ready", async () => {
         `**🎮 Join HONOR OF KINGS FAN ART STUDIO**`
       )
       .setFooter({
-        text: "Honor of Kings • Lampoon Creator Program"
+        text: "Seated at Honor of Kings • LMP Creator Program"
       });
 
     // ===============================
@@ -167,8 +166,6 @@ client.once("ready", async () => {
 // ===============================
 // 2. SEND VIDEO
 // ===============================
-
-const VIDEO_URL = "YOUR_DISCORD_VIDEO_URL";
 
 await channel.send({
   files: [VIDEO_URL]
