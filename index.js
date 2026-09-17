@@ -22,9 +22,6 @@ const TARGET_CHANNEL_ID = process.env.TARGET_CHANNEL_ID;
 const ARTIST_ROLE_ID = "1538257357212094554";
 const CONTENT_CREATOR_ROLE_ID = "1537899709686087781";
 
-// Application channel
-const APPLICATION_CHANNEL_ID = "1538957346729103480";
-
 // Fan Art Studio
 const FAN_ART_INVITE = "https://discord.gg/CfvXjMBH";
 
@@ -90,17 +87,30 @@ client.once("ready", async () => {
       .setTitle("🏆 HONOR OF KINGS CREATOR & ARTIST")
       .setDescription(
         `## 🎥 Honor of Kings Content Creator\n\n` +
+
         `<@&${CONTENT_CREATOR_ROLE_ID}>\n` +
         `**Want to become an Honor of Kings Content Creator?**\n\n` +
-        `Go to the **upper part of this channel** and find **HOK Studio - Creator Application**.\n` +
-        `Click the **site button at the bottom of that embed** and complete your application.\n\n` +
+
+        `Go to the **upper part of this channel** and find ` +
+        `**HOK Studio - Creator Application**.\n` +
+
+        `Click the **site button at the bottom of that embed** ` +
+        `and complete your application.\n\n` +
+
         `After completing the application:\n\n` +
-        `Go to the **bottom part of this channel** and click **Claim Role** to claim your **Content Creator** role in the Lampoon Server.\n\n` +
+
+        `Go to the **bottom part of this channel** and click ` +
+        `**Claim Role** to claim your **Content Creator** role ` +
+        `in the Lampoon Server.\n\n` +
 
         `## 🎨 Artist & Creator\n\n` +
+
         `<@&${ARTIST_ROLE_ID}> <@&${CONTENT_CREATOR_ROLE_ID}>\n\n` +
-        `Are you an **Artist or Content Creator** looking for extra opportunities and tokens? ` +
-        `Join **HONOR OF KINGS FAN ART STUDIO** and become part of the community!\n\n` +
+
+        `Are you an **Artist or Content Creator** looking for ` +
+        `extra opportunities and tokens? ` +
+        `Join **HONOR OF KINGS FAN ART STUDIO** and become ` +
+        `part of the community!\n\n` +
 
         `### 🖌️ Artist (Non-AIGC-Creator)\n` +
         `<a:Avisala:1542448826265243660> Share your original Honor of Kings fan art\n` +
@@ -119,7 +129,7 @@ client.once("ready", async () => {
         `**🎮 Join HONOR OF KINGS FAN ART STUDIO**`
       )
       .setFooter({
-        text: "Seated at Honor of Kings • Lampoon Creator Program"
+        text: "Honor of Kings • Lampoon Creator Program"
       });
 
     // ===============================
@@ -135,7 +145,7 @@ client.once("ready", async () => {
     );
 
     // ===============================
-    // SEND EMBED
+    // 1. SEND EMBED
     // ===============================
 
     await channel.send({
@@ -143,8 +153,6 @@ client.once("ready", async () => {
         `<@&${ARTIST_ROLE_ID}> <@&${CONTENT_CREATOR_ROLE_ID}>`,
 
       embeds: [embed],
-
-      components: [row],
 
       allowedMentions: {
         roles: [
@@ -157,19 +165,37 @@ client.once("ready", async () => {
     console.log("✅ Creator & Artist embed sent!");
 
     // ===============================
-    // SEND VIDEO
+    // 2. SEND VIDEO URL
     // ===============================
 
     if (BOTTOM_MEDIA_URL) {
-      await channel.send(BOTTOM_MEDIA_URL);
+      await channel.send({
+        content: BOTTOM_MEDIA_URL,
+        allowedMentions: {
+          parse: []
+        }
+      });
 
-      console.log("🎥 Video URL sent!");
+      console.log("🎥 Video URL sent for Discord preview!");
     } else {
       console.log("⚠️ BOTTOM_MEDIA_URL is missing.");
     }
 
+    // ===============================
+    // 3. SEND BUTTON UNDER VIDEO
+    // ===============================
+
+    await channel.send({
+      components: [row]
+    });
+
+    console.log("🎨 Join Fan Art Studio button sent!");
+
   } catch (error) {
-    console.error("❌ Error while sending embed/video:", error);
+    console.error(
+      "❌ Error while sending embed/video/button:",
+      error
+    );
   }
 });
 
@@ -187,6 +213,11 @@ client.on("error", error => {
 
 if (!TOKEN) {
   console.error("❌ DISCORD_TOKEN is missing from Render.");
+  process.exit(1);
+}
+
+if (!TARGET_CHANNEL_ID) {
+  console.error("❌ TARGET_CHANNEL_ID is missing from Render.");
   process.exit(1);
 }
 
