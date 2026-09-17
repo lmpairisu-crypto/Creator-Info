@@ -88,20 +88,20 @@ client.once("ready", async () => {
       .setDescription(
         `## 🎥 Honor of Kings Content Creator\n\n` +
 
-        `<@&${CONTENT_CREATOR_ROLE_ID}>\n` +
-        `**Want to become an Honor of Kings Content Creator?**\n\n` +
+`<@&${CONTENT_CREATOR_ROLE_ID}>\n` +
+`**Want to become an Honor of Kings Content Creator?**\n\n` +
 
-        `Go to the **upper part of this channel** and find ` +
-        `**HOK Studio - Creator Application**.\n` +
+`Go to the 🎮『hokcreator・application』 upper part of this channel ` +
+`<#1538957346729103480>\n\n` +
 
-        `Click the **site button at the bottom of that embed** ` +
-        `and complete your application.\n\n` +
+`Click the **site button at the bottom of that embed** ` +
+`and complete your application.\n\n` +
 
-        `After completing the application:\n\n` +
+`After completing the application:\n\n` +
 
-        `Go to the **bottom part of this channel** and click ` +
-        `**Claim Role** to claim your **Content Creator** role ` +
-        `in the Lampoon Server.\n\n` +
+`Go to the **bottom part of this channel** and click ` +
+`**Claim Role** to claim your **Content Creator** role ` +
+`in the Lampoon Server.\n\n`
 
         `## 🎨 Artist & Creator\n\n` +
 
