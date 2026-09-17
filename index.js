@@ -15,7 +15,7 @@ const http = require("http");
 
 const TOKEN = process.env.DISCORD_TOKEN;
 
-// Channel where the embed will be sent
+// Channel where the embed and video will be sent
 const TARGET_CHANNEL_ID = process.env.TARGET_CHANNEL_ID;
 
 // Roles
@@ -25,8 +25,9 @@ const CONTENT_CREATOR_ROLE_ID = "1537899709686087781";
 // Fan Art Studio
 const FAN_ART_INVITE = "https://discord.gg/CfvXjMBH";
 
-// Direct VIDEO URL
-const BOTTOM_MEDIA_URL = process.env.BOTTOM_MEDIA_URL;
+// Direct Discord VIDEO URL
+// No filename is required.
+const VIDEO_URL = "YOUR_DISCORD_VIDEO_URL";
 
 // ===============================
 // HEALTH SERVER FOR RENDER
@@ -163,23 +164,17 @@ client.once("ready", async () => {
     });
 
     console.log("✅ Creator & Artist embed sent!");
+// ===============================
+// 2. SEND VIDEO
+// ===============================
 
-    // ===============================
-    // 2. SEND VIDEO
-    // ===============================
+const VIDEO_URL = "YOUR_DISCORD_VIDEO_URL";
 
-    if (BOTTOM_MEDIA_URL) {
-      await channel.send({
-        content: BOTTOM_MEDIA_URL,
-        allowedMentions: {
-          parse: []
-        }
-      });
+await channel.send({
+  files: [VIDEO_URL]
+});
 
-      console.log("🎥 Video URL sent!");
-    } else {
-      console.log("⚠️ BOTTOM_MEDIA_URL is missing.");
-    }
+console.log("🎥 Video sent!");
 
     // ===============================
     // 3. SEND BUTTON UNDER VIDEO
