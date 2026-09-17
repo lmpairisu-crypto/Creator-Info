@@ -83,54 +83,54 @@ client.once("ready", async () => {
     // ===============================
 
     const embed = new EmbedBuilder()
-      .setColor("#D4AF37")
-      .setTitle("🏆 HONOR OF KINGS CREATOR & ARTIST")
-      .setDescription(
-        `## 🎥 Honor of Kings Content Creator\n\n` +
+  .setColor("#D4AF37")
+  .setTitle("🏆 HONOR OF KINGS CREATOR & ARTIST")
+  .setDescription(
+    `## 🎥 Honor of Kings Content Creator\n\n` +
 
-`<@&${CONTENT_CREATOR_ROLE_ID}>\n` +
-`**Want to become an Honor of Kings Content Creator?**\n\n` +
+    `<@&${CONTENT_CREATOR_ROLE_ID}>\n` +
+    `**Want to become an Honor of Kings Content Creator?**\n\n` +
 
-`Go to the 🎮『hokcreator・application』 upper part of this channel ` +
-`<#1538957346729103480>\n\n` +
+    `Go to the 🎮『hokcreator・application』 upper part of this channel ` +
+    `<#1538957346729103480>\n\n` +
 
-`Click the **site button at the bottom of that embed** ` +
-`and complete your application.\n\n` +
+    `Click the **site button at the bottom of that embed** ` +
+    `and complete your application.\n\n` +
 
-`After completing the application:\n\n` +
+    `After completing the application:\n\n` +
 
-`Go to the **bottom part of this channel** and click ` +
-`**Claim Role** to claim your **Content Creator** role ` +
-`in the Lampoon Server.\n\n`
+    `Go to the **bottom part of this channel** and click ` +
+    `**Claim Role** to claim your **Content Creator** role ` +
+    `in the Lampoon Server.\n\n` +
 
-        `## 🎨 Artist & Creator\n\n` +
+    `## 🎨 Artist & Creator\n\n` +
 
-        `<@&${ARTIST_ROLE_ID}> <@&${CONTENT_CREATOR_ROLE_ID}>\n\n` +
+    `<@&${ARTIST_ROLE_ID}> <@&${CONTENT_CREATOR_ROLE_ID}>\n\n` +
 
-        `Are you an **Artist or Content Creator** looking for ` +
-        `extra opportunities and tokens? ` +
-        `Join **HONOR OF KINGS FAN ART STUDIO** and become ` +
-        `part of the community!\n\n` +
+    `Are you an **Artist or Content Creator** looking for ` +
+    `extra opportunities and tokens? ` +
+    `Join **HONOR OF KINGS FAN ART STUDIO** and become ` +
+    `part of the community!\n\n` +
 
-        `### 🖌️ Artist (Non-AIGC-Creator)\n` +
-        `<a:Avisala:1542448826265243660> Share your original Honor of Kings fan art\n` +
-        `<a:Avisala:1542448826265243660> Showcase your artwork to the community\n` +
-        `<a:Avisala:1542448826265243660> Participate in fan-art activities and projects\n` +
-        `<a:Avisala:1542448826265243660> Connect and collaborate with other artists\n` +
-        `<a:Avisala:1542448826265243660> Get opportunities for extra tokens\n\n` +
+    `### 🖌️ Artist (Non-AIGC-Creator)\n` +
+    `<a:Avisala:1542448826265243660> Share your original Honor of Kings fan art\n` +
+    `<a:Avisala:1542448826265243660> Showcase your artwork to the community\n` +
+    `<a:Avisala:1542448826265243660> Participate in fan-art activities and projects\n` +
+    `<a:Avisala:1542448826265243660> Connect and collaborate with other artists\n` +
+    `<a:Avisala:1542448826265243660> Get opportunities for extra tokens\n\n` +
 
-        `### 🎬 Content Creator (Video Creator)\n` +
-        `<a:Avisala:1542448826265243660> Share your Honor of Kings videos and creative content\n` +
-        `<a:Avisala:1542448826265243660> Showcase your content to the community\n` +
-        `<a:Avisala:1542448826265243660> Connect with other creators and artists\n` +
-        `<a:Avisala:1542448826265243660> Participate in creator activities and projects\n` +
-        `<a:Avisala:1542448826265243660> Get opportunities for extra tokens\n\n` +
+    `### 🎬 Content Creator (Video Creator)\n` +
+    `<a:Avisala:1542448826265243660> Share your Honor of Kings videos and creative content\n` +
+    `<a:Avisala:1542448826265243660> Showcase your content to the community\n` +
+    `<a:Avisala:1542448826265243660> Connect with other creators and artists\n` +
+    `<a:Avisala:1542448826265243660> Participate in creator activities and projects\n` +
+    `<a:Avisala:1542448826265243660> Get opportunities for extra tokens\n\n` +
 
-        `**🎮 Join HONOR OF KINGS FAN ART STUDIO**`
-      )
-      .setFooter({
-        text: "Seated at Honor of Kings • LMP Creator Program"
-      });
+    `**🎮 Join HONOR OF KINGS FAN ART STUDIO**`
+  )
+  .setFooter({
+    text: "Seated at Honor of Kings • LMP Creator Program"
+  });
 
     // ===============================
     // BUTTON
